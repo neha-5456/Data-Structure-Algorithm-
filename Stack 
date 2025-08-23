@@ -1,0 +1,147 @@
+{
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "source": [
+        "**Stack Data Structure**\n",
+        "A stack is a fundamental data structure that follows the LIFO (Last-In, First-Out) principle. The last element added to the stack is the first one to be removed.\n",
+        "\n",
+        "# **Basic Operations**\n",
+        "\n",
+        "**Push:** Add an element to the top of the stack\n",
+        "\n",
+        "**Pop:** Remove and return the top element from the stack\n",
+        "\n",
+        "**Peek/Top:** Return the top element without removing it\n",
+        "\n",
+        "**isEmpty**: Check if the stack is empty\n",
+        "\n",
+        "**isFull**: Check if the stack is full (for fixed-size implementations)\n",
+        "\n",
+        "**Size**: Return the number of elements in the\n",
+        "\n",
+        "# **Common Applications**\n",
+        "1. Function call management (call stack)\n",
+        "2. Undo/Redo functionality in applications\n",
+        "3. Expression evaluation and syntax parsing\n",
+        "4. Backtracking algorithms\n",
+        "5. Browser history management"
+      ],
+      "metadata": {
+        "id": "o3OWrI0-8IkU"
+      },
+      "id": "o3OWrI0-8IkU"
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        " **Using Linked List**\n"
+      ],
+      "metadata": {
+        "id": "vEegwRVFBWBt"
+      },
+      "id": "vEegwRVFBWBt"
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "# create Linked List Node\n",
+        "class Node:\n",
+        "\n",
+        "    def __init__(self, value):\n",
+        "         self.data = value\n",
+        "         self.next = None\n",
+        "\n",
+        "class LinkedListStack:\n",
+        "  def __init__(self):\n",
+        "    self.top = None\n",
+        "    self.n = 0\n",
+        "\n",
+        "  def isempty(self):\n",
+        "    return self.top is None\n",
+        "\n",
+        "  def push(self, val):\n",
+        "    new_node = Node(val)\n",
+        "    new_node.next = self.top\n",
+        "    self.top = new_node\n",
+        "    self.n += 1\n",
+        "  # insert data in stack\n",
+        "  def pop(self):\n",
+        "    if self.isempty():\n",
+        "      return \"stack is empty\"\n",
+        "    else:\n",
+        "      poped = self.top.data\n",
+        "      self.top = self.top.next\n",
+        "      self.n -=1\n",
+        "      return poped\n",
+        "\n",
+        "  def peak(self):\n",
+        "    if self.isempty():\n",
+        "      return 'stack empty'\n",
+        "    else:\n",
+        "      return stack.top.data\n",
+        "\n",
+        "  # pop data from stack\n",
+        "  def display(self):\n",
+        "    temp = self.top\n",
+        "    res = ''\n",
+        "    while temp:\n",
+        "      res += str(temp.data) + '->'\n",
+        "      temp  = temp.next\n",
+        "    return res[:-2]\n",
+        "\n",
+        "  def __str__(self):\n",
+        "    return self.display()\n",
+        "\n",
+        "s = LinkedListStack()\n",
+        "s.push(1)\n",
+        "s.push(2)\n",
+        "#print(s.pop())\n",
+        "print(s)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/"
+        },
+        "id": "WkLqPaoNA-Vv",
+        "outputId": "010c6cf4-9484-4e2b-c82f-318898e701d5"
+      },
+      "id": "WkLqPaoNA-Vv",
+      "execution_count": 24,
+      "outputs": [
+        {
+          "output_type": "stream",
+          "name": "stdout",
+          "text": [
+            "2->1\n"
+          ]
+        }
+      ]
+    },
+    {
+      "cell_type": "code",
+      "source": [],
+      "metadata": {
+        "id": "__XaO5P9Km_8"
+      },
+      "id": "__XaO5P9Km_8",
+      "execution_count": null,
+      "outputs": []
+    }
+  ],
+  "metadata": {
+    "kernelspec": {
+      "display_name": "Python 3",
+      "name": "python3"
+    },
+    "language_info": {
+      "name": "python"
+    },
+    "required_libs": [],
+    "colab": {
+      "provenance": []
+    }
+  },
+  "nbformat": 4,
+  "nbformat_minor": 5
+}
